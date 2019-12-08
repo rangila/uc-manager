@@ -10,3 +10,5 @@ This repo aims to track and deploy my configurations, dependencies, etc...
 - herbstluftm
 - zsh
 - feh
+- xsetroot
+- vim
