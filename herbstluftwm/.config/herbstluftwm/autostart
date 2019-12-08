@@ -9,7 +9,9 @@ hc() {
 hc emit_hook reload
 
 xsetroot -solid '#fdf6e3'
-xrdb ~/.Xresources
+feh --bg-fill "/home/rangila/uc-manager/wallpapers/pattern_1.png
+
+xrdb "$HOME/.Xresources"
 
 # remove all existing keybindings
 hc keyunbind --all
