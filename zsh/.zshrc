@@ -101,6 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias nbstrip_jq="jq --indent 1 \
+    '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
+    | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null  \
+    | .metadata = {\"language_info\": {\"name\": \"python\", \"pygments_lexer\": \"ipython3\"}} \
+    | .cells[].metadata = {} \
+    '"
+
 # Base16 Shell
 BASE16_SHELL="$HOME/uc-manager/base16-shell"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
