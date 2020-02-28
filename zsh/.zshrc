@@ -25,23 +25,54 @@ BASE16_SHELL="$HOME/uc-manager/base16-shell"
 #
 export PATH="$HOME/.local/bin:$PATH"
 
-# Anaconda
-#
-saved_ps=$PS1
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/rangila/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
+### Specific
+
+###  BMWRPP-BEGIN  ###
+# Do not change content between BEGIN and END!
+# This section is managed by a script.
+
+if [ -f "/etc/bmwrpp-bootstrap/zshrc" ]; then
+  . "/etc/bmwrpp-bootstrap/zshrc"
 else
-    if [ -f "/home/rangila/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/rangila/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/rangila/anaconda3/bin:$PATH"
-    fi
+  echo "bmwrpp-bootstrap not installed, please remove BMWRPP section from /home/vaya/.zshrc"
 fi
-unset __conda_setup
-# <<< conda initialize <<<
+###  BMWRPP-END  ###
+alias git="git"
 
-export PS1="$saved_ps"
+alias screencast="avconv -video_size 1920x1080 -framerate 25 -f x11grab -i :0.0+0,0 "
+alias fork="fork &> /dev/null"
+alias gitlog="git log --graph --all --decorate=full"
+alias to-clipboard="xclip -selection clipboard -i"
+alias rmbuild='if [ `basename $PWD` = "build" -a -e CMakeCache.txt ]; then rm -rvf *; else echo "\e[31mRecursive remove conditions not met\e[0m"; fi'
+alias gitlog="git log --all --graph --decorate=full"
+alias gitlog-master="git log --graph --decorate=full master"
 
+#PROXY="$USER:$PW@10.12.9.140:8080";
+PROXY_USH_PAC="http://www.fiatauto.com/pac/proxy-trn1.pac"
+#PROXY_USH="151.88.24.11:8080"
+PROXY_USH="ittrn1s3px02.fiatauto.com:8080"
+alias myproxy='read -r "USER?Username: " ;read -rs "PW?Password: " 
+PROXY="$USER:$PW@$PROXY_USH";
+export http_proxy=http://$PROXY;export Proxy=$http_proxy;export https_proxy=https://$PROXY;export ftp_proxy=ftp://$PROXY'
+
+alias setproxy='read -rs "PW?Password: " 
+PROXY="f09620c:$PW@$PROXY_USH";
+export http_proxy=http://$PROXY;export Proxy=$http_proxy;export https_proxy=https://$PROXY;export ftp_proxy=ftp://$PROXY'
+
+alias cntlm-passwd='echo "Enter password and update /etc/cntlm.conf accordingly. Afterwards restart cntlm service"; echo -n "New password: "; cntlm -H -u f09620c -d fiatauto | grep PassNTLMv2'
+
+alias emacs='nohup emacs &>/dev/null & disown'
+alias charm='nohup charm &>/dev/null & disown'
+alias vim='nvim'
+alias vimconf='nvim $HOME/.config/nvim/init.vim'
+
+# Bazel alias
+alias launch-test-gui="bazel run --config=adp_fca --cache_test_results=no "
+alias current-status=" echo ddad: \$(git rev-parse --short HEAD) && echo adp master: \$(git -C application/adp rev-parse --short master) && echo adp: \$(git -C application/adp rev-parse --short HEAD) && git submodule status"
+
+export HISTSIZE=10000000
+
+# cntlm
+PROXY_NTLM="127.0.0.1:3128"
+#export http_proxy="http://$PROXY_NTLM/"
+#export https_proxy="https://$PROXY_NTLM/"
