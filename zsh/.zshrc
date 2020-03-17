@@ -63,6 +63,7 @@ alias cntlm-passwd='echo "Enter password and update /etc/cntlm.conf accordingly.
 
 alias emacs='nohup emacs &>/dev/null & disown'
 alias charm='nohup charm &>/dev/null & disown'
+alias jvim='/usr/bin/vim'
 alias vim='nvim'
 alias vimconf='nvim $HOME/.config/nvim/init.vim'
 
@@ -74,5 +75,8 @@ export HISTSIZE=10000000
 
 # cntlm
 PROXY_NTLM="127.0.0.1:3128"
-#export http_proxy="http://$PROXY_NTLM/"
-#export https_proxy="https://$PROXY_NTLM/"
+export http_proxy="http://$PROXY_NTLM/"
+export https_proxy="http://$PROXY_NTLM/"
+export HTTP_PROXY="http://$PROXY_NTLM/"
+export HTTPS_PROXY="http://$PROXY_NTLM/"
+
