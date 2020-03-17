@@ -5,13 +5,17 @@
       "filetypes": ["c", "cpp", "cuda", "objc", "objcpp", "h", "hpp"],
       "rootPatterns": [".ccls", "compile_commands.json"],
       "initializationOptions": {
+          "clang": {
+              "resourceDir": "/usr/lib/llvm-8/lib/clang/8.0.0"
+          },
           "index": {
-              "threads": 7,
+              "initialBlacklist": [],
+              "threads": 4,
               "comments": 0
           },
         "cache": {
           "directory": ".ccls-cache",
-          "useHierarchy": true
+          "hierarchicalPath": true
         },
         "client": {
           "snippetSupport": true
