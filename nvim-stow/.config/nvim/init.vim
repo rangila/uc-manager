@@ -24,19 +24,43 @@ syntax on
 syntax enable
 
 call plug#begin()
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'Yggdroot/LeaderF', { 'do': './install.bat' }
+Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 let base16colorspace=256
 colorscheme base16-solarized-light
 
 nnoremap Q <Nop>
+nnoremap <F1> :NERDTreeFind<CR>
 nnoremap <F2> :NERDTreeToggle<CR>
 nnoremap <F9> :set ignorecase! ignorecase?<CR>
 
+let mapleader = "\<SPACE>"
+
+" LeaderF
+" =============================================================================
+"let g:Lf_WindowPosition = 'popup'
+"let g:Lf_PreviewInPopup = 1
+
+noremap <leader>fr :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
+noremap <leader>bb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+noremap <leader>bl :<C-U><C-R>=printf("Leaderf line %s", "")<CR><CR>
+noremap <leader>ff :<C-U><C-R>=printf("Leaderf file %s", "")<CR><CR>
+noremap <leader>pf :<C-U><C-R>=printf("Leaderf file %s application/adp/", "")<CR><CR>
+
+" coc.nvim
+" =============================================================================
+nmap <leader>ss <Plug>CtrlSFPrompt
+vmap <leader>sp <Plug>CtrlSFVwordPath
+vmap <leader>se <Plug>CtrlSFVwordExec
+nmap <leader>sp <Plug>CtrlSFCwordPath
+nmap <leader>sf <Plug>CtrlSFPwordPath
 
 " coc.nvim
 " =============================================================================
@@ -112,12 +136,12 @@ nmap <silent> gr <Plug>(coc-references)
 "autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>sr <Plug>(coc-rename)
 
 "" Formatting selected code.
-"xmap <leader>f  <Plug>(coc-format-selected)
-"nmap <leader>f  <Plug>(coc-format-selected)
-"
+xmap <leader>bf  <Plug>(coc-format-selected)
+nmap <leader>bf  <Plug>(coc-format-selected)
+
 "" augroup mygroup
 ""   autocmd!
 ""   " Setup formatexpr specified filetype(s).
@@ -148,10 +172,10 @@ nmap <leader>rn <Plug>(coc-rename)
 "" coc-tsserver, coc-python are the examples of servers that support it.
 "nmap <silent> <TAB> <Plug>(coc-range-select)
 "xmap <silent> <TAB> <Plug>(coc-range-select)
-"
-"" Add `:Format` command to format current buffer.
-"command! -nargs=0 Format :call CocAction('format')
-"
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
 "" Add `:Fold` command to fold current buffer.
 "command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 "
