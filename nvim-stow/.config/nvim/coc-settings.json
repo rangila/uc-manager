@@ -10,7 +10,7 @@
           },
           "index": {
               "initialBlacklist": [],
-              "threads": 4,
+              "threads": 20,
               "comments": 0
           },
         "cache": {
