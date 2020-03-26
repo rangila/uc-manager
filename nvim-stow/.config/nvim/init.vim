@@ -29,8 +29,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
 Plug 'dyng/ctrlsf.vim'
-Plug 'Yggdroot/LeaderF', { 'do': './install.bat' }
-Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
+Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
+"Plug 'scalameta/coc-metals', {'do': 'yarn install --frozen-lockfile'}
 call plug#end()
 
 let base16colorspace=256
@@ -47,6 +47,11 @@ let mapleader = "\<SPACE>"
 " =============================================================================
 "let g:Lf_WindowPosition = 'popup'
 "let g:Lf_PreviewInPopup = 1
+let g:Lf_WildIgnore = { 'dir': [".ccls-cache"] }
+let g:Lf_FollowLinks = 0
+"let g:Lf_UseCache = 0
+let g:Lf_UseVersionControlTool = 0
+let g:Lf_DefaultExternalTool = "ag"
 
 noremap <leader>fr :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>bb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
