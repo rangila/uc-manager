@@ -19,5 +19,6 @@ URxvt*scrollstyle: rxvt
 URxvt*iso14755: False
 URxvt.perl-ext-common: selection-to-clipboard
 
-#include "uc-manager/base16-xresources/xresources/base16-solarized-light-256.Xresources"
+//#include "uc-manager/base16-xresources/xresources/base16-solarized-dark-256.Xresources"
+#include "uc-manager/nord/nord-xresources/src/nord"
 
