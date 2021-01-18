@@ -1,3 +1,4 @@
 *.png*
 nvim-stow/.config/nvim/plugged/
+nvim-stow/.config/nvim/swp/
 
