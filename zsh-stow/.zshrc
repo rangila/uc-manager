@@ -9,6 +9,9 @@ plugins=(sudo last-working-dir ssh-agent wd)
 
 source $ZSH/oh-my-zsh.sh
 
+# usage:
+# logpid $(pidof process_name) | tee memory.log
+logpid() { while sleep 1; do  ps -p $1 -o pmem= -o drs= -o rss= -o vsz= ; done; }
 
 alias nbstrip_jq="jq --indent 1 \
     '(.cells[] | select(has(\"outputs\")) | .outputs) = []  \
