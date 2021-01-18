@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/uc-manager/ohmyzsh
 
-ZSH_THEME="af-magic"
+ZSH_THEME="jonathan"
 
 DISABLE_AUTO_UPDATE="true"
 
