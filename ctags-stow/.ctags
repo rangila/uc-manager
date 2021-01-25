@@ -1,4 +1,7 @@
---extra=+f
+--extra=+fq
+--c++-kinds=+p
+--fields=+mnailS
+--tag-relative=yes
 
 --langdef=scala
 --langmap=scala:.scala
@@ -26,3 +29,15 @@
 --exclude=*.tar.*
 
 --exclude=bazel-*
+--exclude=*.tex
+--exclude=*.css
+--exclude=*.json
+--exclude=*.js
+--exclude=*.html
+--exclude=*.svg
+--exclude=*.m
+--exclude=*.proto
+--exclude=*.xml
+--exclude=*.inl
+--exclude=*.ini
+--exclude=*.txt

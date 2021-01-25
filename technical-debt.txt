@@ -1,0 +1,24 @@
+
+* Use universal ctags instead of exuberant ctags
+Exhuberant ctags do not provide proper 'using' aliases support for C++
+
+* Use clang rules for input formatting
+
+* clang-format on command
+rhysd/vim-clang-format
+
+* fuzzy matching on ctags g-]
+
+* use pager for long command output. e.g. bazel compilation errors with templates?
+
+* switch header/source
+
+* goto header under cursor
+
+* vim support
+
+* vimdiff colors
+
+* word is separated also by underscores (done)
+
+* fzf filter files when looking for a tag

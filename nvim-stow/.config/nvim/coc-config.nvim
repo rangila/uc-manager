@@ -1,14 +1,6 @@
 
 " coc.nvim
 " =============================================================================
-nmap <leader>ss <Plug>CtrlSFPrompt
-vmap <leader>sp <Plug>CtrlSFVwordPath
-vmap <leader>se <Plug>CtrlSFVwordExec
-nmap <leader>sp <Plug>CtrlSFCwordPath
-nmap <leader>sf <Plug>CtrlSFPwordPath
-
-" coc.nvim
-" =============================================================================
 " TextEdit might fail if hidden is not set.
 set hidden
 

@@ -31,3 +31,4 @@ test -r ~/uc-manager/nord/nord-dircolors/src/dir_colors && eval $(dircolors ~/uc
 #
 export PATH="$HOME/.local/bin:$PATH"
 
+source ~/fc-manager/zsh/ush.sh
